@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">TODOLIST</string>
+    <string name="create_new">새로 만들기</string>
+    <string name="edit">편집</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="save">저장</string>
+    <string name="to_do_list">할 일 목록</string>
+    <string name="plz_input_title">제목을 입력하세요.</string>
+    <string name="end_date">종료일</string>
+    <string name="start_date">시작일</string>
+    <string name="include_end_date">종료일 포함</string>
+    <string name="plz_input_content">메모 내용을 입력하세요.</string>
+    <string name="sunday">일요일</string>
+    <string name="monday">월요일</string>
+    <string name="tuesday">화요일</string>
+    <string name="wednesday">수요일</string>
+    <string name="thursday">목요일</string>
+    <string name="friday">금요일</string>
+    <string name="saturday">토요일</string>
+    <string name="select_end_date">종료일 선택</string>
+    <string name="select_start_date">시작일 선택</string>
+    <string name="error_note_date">종료일이 시작일 보다 빠를 수 없습니다.</string>
+    <string name="cancel">취소</string>
+    <string name="delete">삭제</string>
+</resources>

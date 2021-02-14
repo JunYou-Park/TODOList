@@ -1,0 +1,883 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="14dp"
+        android:orientation="vertical"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/tv_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="18dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="12dp"
+                android:text="2020년"
+                android:textColor="@color/black"
+                android:textSize="17.5sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_month"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="end"
+                android:paddingTop="20dp"
+                android:paddingBottom="12dp"
+                android:text="12월"
+                android:textColor="@color/black"
+                android:textSize="17.5sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/ivb_prev"
+                    android:layout_width="59dp"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    app:srcCompat="@drawable/ic_prev" />
+
+                <ImageButton
+                    android:id="@+id/ivb_next"
+                    android:layout_width="59dp"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    app:srcCompat="@drawable/ic_next" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/line_week_default"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_sun7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:enabled="true"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text="일"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_mon7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:enabled="true"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text="월"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_tue7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:enabled="true"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text="화"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_wed7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:enabled="true"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text="수"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_thu7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:enabled="true"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text="목"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_fri7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:enabled="true"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text="금"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_sat7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:enabled="true"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text="토"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="7">
+
+            <LinearLayout
+                android:id="@+id/line_cal_week_1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/cb_cal_sun1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_calandar_circle"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:tag="sun"
+                    android:text="1"
+                    android:textColor="@color/selector_calendar_text"
+                    android:textSize="15sp" />
+
+                <CheckBox
+                    android:id="@+id/cb_cal_sun2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_calandar_circle"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:tag="sun"
+                    android:text="8"
+                    android:textColor="@color/selector_calendar_text"
+                    android:textSize="15sp" />
+
+                <CheckBox
+                    android:id="@+id/cb_cal_sun3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_calandar_circle"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:tag="sun"
+                    android:text="15"
+                    android:textColor="@color/selector_calendar_text"
+                    android:textSize="15sp" />
+
+                <CheckBox
+                    android:id="@+id/cb_cal_sun4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_calandar_circle"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:tag="sun"
+                    android:text="22"
+                    android:textColor="@color/selector_calendar_text"
+                    android:textSize="15sp" />
+
+                <CheckBox
+                    android:id="@+id/cb_cal_sun5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_calandar_circle"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:tag="sun"
+                    android:text="29"
+                    android:textColor="@color/selector_calendar_text"
+                    android:textSize="15sp" />
+
+                <CheckBox
+                    android:id="@+id/cb_cal_sun6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_calandar_circle"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:tag="sun"
+                    android:text="5"
+                    android:textColor="@color/selector_calendar_text"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/line_cal_week_2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/cb_cal_mon1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_calandar_circle"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:tag="mon"
+                    android:text="2"
+                    android:textColor="@color/selector_calendar_text"
+                    android:textSize="15sp" />
+
+                <CheckBox
+                    android:id="@+id/cb_cal_mon2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_calandar_circle"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:tag="mon"
+                    android:text="9"
+                    android:textColor="@color/selector_calendar_text"
+                    android:textSize="15sp" />
+
+                <CheckBox
+                    android:id="@+id/cb_cal_mon3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_calandar_circle"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:tag="mon"
+                    android:text="16"
+                    android:textColor="@color/selector_calendar_text"
+                    android:textSize="15sp" />
+
+                <CheckBox
+                    android:id="@+id/cb_cal_mon4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_calandar_circle"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:tag="mon"
+                    android:text="23"
+                    android:textColor="@color/selector_calendar_text"
+                    android:textSize="15sp" />
+
+                <CheckBox
+                    android:id="@+id/cb_cal_mon5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_calandar_circle"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:tag="mon"
+                    android:text="30"
+                    android:textColor="@color/selector_calendar_text"
+                    android:textSize="15sp" />
+
+                <CheckBox
+                    android:id="@+id/cb_cal_mon6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_calandar_circle"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:tag="mon"
+                    android:text="6"
+                    android:textColor="@color/selector_calendar_text"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/line_cal_week_3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/cb_cal_tue1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_calandar_circle"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:tag="tue"
+                    android:text="3"
+                    android:textColor="@color/selector_calendar_text"
+                    android:textSize="15sp" />
+
+                <CheckBox
+                    android:id="@+id/cb_cal_tue2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_calandar_circle"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:tag="tue"
+                    android:text="10"
+                    android:textColor="@color/selector_calendar_text"
+                    android:textSize="15sp" />
+
+                <CheckBox
+                    android:id="@+id/cb_cal_tue3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_calandar_circle"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:tag="tue"
+                    android:text="17"
+                    android:textColor="@color/selector_calendar_text"
+                    android:textSize="15sp" />
+
+                <CheckBox
+                    android:id="@+id/cb_cal_tue4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_calandar_circle"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:tag="tue"
+                    android:text="24"
+                    android:textColor="@color/selector_calendar_text"
+                    android:textSize="15sp" />
+
+                <CheckBox
+                    android:id="@+id/cb_cal_tue5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_calandar_circle"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:tag="tue"
+                    android:text="31"
+                    android:textColor="@color/selector_calendar_text"
+                    android:textSize="15sp" />
+
+                <CheckBox
+                    android:id="@+id/cb_cal_tue6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_calandar_circle"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:tag="tue"
+                    android:text="7"
+                    android:textColor="@color/selector_calendar_text"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/line_cal_week_4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/cb_cal_wed1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_calandar_circle"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:tag="wed"
+                    android:text="4"
+                    android:textColor="@color/selector_calendar_text"
+                    android:textSize="15sp" />
+
+                <CheckBox
+                    android:id="@+id/cb_cal_wed2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_calandar_circle"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:tag="wed"
+                    android:text="11"
+                    android:textColor="@color/selector_calendar_text"
+                    android:textSize="15sp" />
+
+                <CheckBox
+                    android:id="@+id/cb_cal_wed3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_calandar_circle"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:tag="wed"
+                    android:text="18"
+                    android:textColor="@color/selector_calendar_text"
+                    android:textSize="15sp" />
+
+                <CheckBox
+                    android:id="@+id/cb_cal_wed4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_calandar_circle"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:tag="wed"
+                    android:text="25"
+                    android:textColor="@color/selector_calendar_text"
+                    android:textSize="15sp" />
+
+                <CheckBox
+                    android:id="@+id/cb_cal_wed5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_calandar_circle"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:tag="wed"
+                    android:text="1"
+                    android:textColor="@color/selector_calendar_text"
+                    android:textSize="15sp" />
+
+                <CheckBox
+                    android:id="@+id/cb_cal_wed6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_calandar_circle"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:tag="wed"
+                    android:text="8"
+                    android:textColor="@color/selector_calendar_text"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/line_cal_week_5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/cb_cal_thu1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_calandar_circle"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:tag="thu"
+                    android:text="5"
+                    android:textColor="@color/selector_calendar_text"
+                    android:textSize="15sp" />
+
+                <CheckBox
+                    android:id="@+id/cb_cal_thu2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_calandar_circle"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:tag="thu"
+                    android:text="12"
+                    android:textColor="@color/selector_calendar_text"
+                    android:textSize="15sp" />
+
+                <CheckBox
+                    android:id="@+id/cb_cal_thu3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_calandar_circle"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:tag="thu"
+                    android:text="19"
+                    android:textColor="@color/selector_calendar_text"
+                    android:textSize="15sp" />
+
+                <CheckBox
+                    android:id="@+id/cb_cal_thu4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_calandar_circle"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:tag="thu"
+                    android:text="26"
+                    android:textColor="@color/selector_calendar_text"
+                    android:textSize="15sp" />
+
+                <CheckBox
+                    android:id="@+id/cb_cal_thu5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_calandar_circle"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:tag="thu"
+                    android:text="2"
+                    android:textColor="@color/selector_calendar_text"
+                    android:textSize="15sp" />
+
+                <CheckBox
+                    android:id="@+id/cb_cal_thu6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_calandar_circle"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:tag="thu"
+                    android:text="9"
+                    android:textColor="@color/selector_calendar_text"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/line_cal_week_6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/cb_cal_fri1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_calandar_circle"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:tag="fri"
+                    android:text="6"
+                    android:textColor="@color/selector_calendar_text"
+                    android:textSize="15sp" />
+
+                <CheckBox
+                    android:id="@+id/cb_cal_fri2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_calandar_circle"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:tag="fri"
+                    android:text="13"
+                    android:textColor="@color/selector_calendar_text"
+                    android:textSize="15sp" />
+
+                <CheckBox
+                    android:id="@+id/cb_cal_fri3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_calandar_circle"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:tag="fri"
+                    android:text="20"
+                    android:textColor="@color/selector_calendar_text"
+                    android:textSize="15sp" />
+
+                <CheckBox
+                    android:id="@+id/cb_cal_fri4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_calandar_circle"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:tag="fri"
+                    android:text="27"
+                    android:textColor="@color/selector_calendar_text"
+                    android:textSize="15sp" />
+
+                <CheckBox
+                    android:id="@+id/cb_cal_fri5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_calandar_circle"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:tag="fri"
+                    android:text="3"
+                    android:textColor="@color/selector_calendar_text"
+                    android:textSize="15sp" />
+
+                <CheckBox
+                    android:id="@+id/cb_cal_fri6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_calandar_circle"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:tag="fri"
+                    android:text="10"
+                    android:textColor="@color/selector_calendar_text"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/line_cal_week_7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/cb_cal_sat1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_calandar_circle"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:tag="sat"
+                    android:text="7"
+                    android:textColor="@color/selector_calendar_text"
+                    android:textSize="15sp" />
+
+                <CheckBox
+                    android:id="@+id/cb_cal_sat2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_calandar_circle"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:tag="sat"
+                    android:text="14"
+                    android:textColor="@color/selector_calendar_text"
+                    android:textSize="15sp" />
+
+                <CheckBox
+                    android:id="@+id/cb_cal_sat3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_calandar_circle"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:tag="sat"
+                    android:text="21"
+                    android:textColor="@color/selector_calendar_text"
+                    android:textSize="15sp" />
+
+                <CheckBox
+                    android:id="@+id/cb_cal_sat4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_calandar_circle"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:tag="sat"
+                    android:text="28"
+                    android:textColor="@color/selector_calendar_text"
+                    android:textSize="15sp" />
+
+                <CheckBox
+                    android:id="@+id/cb_cal_sat5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_calandar_circle"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:tag="sat"
+                    android:text="4"
+                    android:textColor="@color/selector_calendar_text"
+                    android:textSize="15sp" />
+
+                <CheckBox
+                    android:id="@+id/cb_cal_sat6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/selector_calandar_circle"
+                    android:button="@null"
+                    android:checked="false"
+                    android:gravity="center"
+                    android:tag="sat"
+                    android:text="11"
+                    android:textColor="@color/selector_calendar_text"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
