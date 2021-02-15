@@ -13,7 +13,7 @@ class NoteRepository(application: Application) {
         noteDao = db.noteDao()
     }
 
-    fun getAllNotes(limit: Int) = noteDao.getAllNotes(limit)
+    fun getAllNotes(limit: Int, done: Boolean) = noteDao.getAllNotes(limit, done)
 
     fun insert(noteVo: NoteVo) = ToDoRoomDataBase.databaseWriteExecutorService.execute { noteDao.insert(noteVo) }
 

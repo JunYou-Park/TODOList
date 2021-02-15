@@ -7,7 +7,7 @@ import com.tsilodot.todo_list.model.NoteVo
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 
-@Database(entities = [NoteVo::class], version = 1)
+@Database(entities = [NoteVo::class], version = 2)
 abstract class ToDoRoomDataBase: RoomDatabase() {
 
     abstract fun noteDao(): NoteDao

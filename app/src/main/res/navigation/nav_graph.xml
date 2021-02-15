@@ -3,20 +3,32 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/noteListFrag">
+    app:startDestination="@id/todoListFrag">
 
     <fragment
-        android:id="@+id/noteListFrag"
-        android:name="com.tsilodot.todo_list.ui.frag.NoteListFrag"
+        android:id="@+id/todoListFrag"
+        android:name="com.tsilodot.todo_list.ui.frag.TodoListFrag"
         android:label="fragment_note_list"
         tools:layout="@layout/fragment_note_list" >
         <action
             android:id="@+id/action_noteListFrag_to_newNoteFrag"
             app:destination="@id/newNoteFrag" />
+        <action
+            android:id="@+id/action_noteListFrag_to_doneListFrag"
+            app:destination="@id/doneListFrag" />
     </fragment>
     <fragment
         android:id="@+id/newNoteFrag"
         android:name="com.tsilodot.todo_list.ui.frag.NewNoteFrag"
         android:label="fragment_new_note"
         tools:layout="@layout/fragment_new_note" />
+    <fragment
+        android:id="@+id/doneListFrag"
+        android:name="com.tsilodot.todo_list.ui.frag.DoneListFrag"
+        android:label="fragment_done_list"
+        tools:layout="@layout/fragment_done_list" >
+        <action
+            android:id="@+id/action_doneListFrag_to_newNoteFrag"
+            app:destination="@id/newNoteFrag" />
+    </fragment>
 </navigation>

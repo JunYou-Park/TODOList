@@ -17,7 +17,7 @@ class NoteViewModel(application: Application): AndroidViewModel(application) {
 
     private val repository: NoteRepository = NoteRepository(application)
 
-    fun getAllNotes(limit: Int) = repository.getAllNotes(limit)
+    fun getAllNotes(limit: Int, done: Boolean) = repository.getAllNotes(limit, done)
 
     fun insert(noteVo: NoteVo) = repository.insert(noteVo)
 

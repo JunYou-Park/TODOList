@@ -3,12 +3,10 @@ package com.tsilodot.todo_list.ui.act
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
-import android.view.MenuItem
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.tsilodot.todo_list.R
 import com.tsilodot.todo_list.databinding.ActivityMainBinding
-import com.tsilodot.todo_list.util.ShowMessage.Companion.showMsg
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,7 +15,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navHostFragment: NavHostFragment
     private lateinit var navController: NavController
 
-    private var destinationId = R.id.noteListFrag
+    private var destinationId = R.id.todoListFrag
     private var title = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,8 +31,9 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             destinationId = destination.id
             when(destinationId){
-                R.id.noteListFrag -> title = getString(R.string.to_do_list)
-                R.id.newNoteFrag -> title = getString(R.string.create_new)
+                R.id.todoListFrag -> title = getString(R.string.to_do_list)
+                R.id.newNoteFrag -> title = getString(R.string.note)
+                R.id.doneListFrag -> title = getString(R.string.done_list)
             }
             setToolbar()
         }
@@ -50,8 +49,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         when(destinationId){
-            R.id.noteListFrag -> menuInflater.inflate(R.menu.note_list_menu, menu)
+            R.id.todoListFrag -> menuInflater.inflate(R.menu.todo_list_menu, menu)
             R.id.newNoteFrag -> menuInflater.inflate(R.menu.new_note_menu, menu)
+            R.id.doneListFrag -> menuInflater.inflate(R.menu.done_list_menu, menu)
         }
         return true
     }

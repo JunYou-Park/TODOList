@@ -19,7 +19,7 @@ interface NoteDao {
     @Query("DELETE FROM note_table")
     fun deleteAll()
 
-    @Query("SELECT * FROM note_table ORDER BY start_date DESC limit :limit")
-    fun getAllNotes(limit: Int): LiveData<List<NoteVo>>
+    @Query("SELECT * FROM note_table WHERE done = :done ORDER BY start_date DESC limit :limit")
+    fun getAllNotes(limit: Int, done: Boolean): LiveData<List<NoteVo>>
 
 }

@@ -25,6 +25,9 @@ data class NoteVo(
     val startDate: Long = 0L,
 
     @ColumnInfo(name = "end_date")
-    val endDate: Long = 0L
+    val endDate: Long = 0L,
+
+    @ColumnInfo(name = "done")
+    var done: Boolean = false
 
 ):Parcelable

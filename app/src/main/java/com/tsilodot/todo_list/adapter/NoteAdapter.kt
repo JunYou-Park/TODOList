@@ -14,6 +14,7 @@ import com.tsilodot.todo_list.R
 import com.tsilodot.todo_list.databinding.LayoutNoteItemBinding
 import com.tsilodot.todo_list.listener.NoteItemListener
 import com.tsilodot.todo_list.model.NoteVo
+import com.tsilodot.todo_list.util.Lambda.Companion.delTextView
 import com.tsilodot.todo_list.util.ResolutionHelper.Companion.getDimension
 import org.joda.time.DateTime
 
@@ -63,9 +64,8 @@ class NoteAdapter(private val isVisible: Boolean) : ListAdapter<NoteVo, NoteAdap
 
             binding.cbNoteCheck.isVisible = isVisible
 
-            binding.tvNoteTitle.text = item.title
-
-
+            if(item.done) binding.tvNoteTitle.delTextView(item.title)
+            else binding.tvNoteTitle.text = item.title
 
             if(item.endDate==0L){
                 val startDate = DateTime(item.startDate)
