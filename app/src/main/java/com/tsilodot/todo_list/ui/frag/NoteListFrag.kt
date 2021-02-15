@@ -48,7 +48,7 @@ class NoteListFrag : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
 
-        binding.rvNoteList.adapter = noteAdapter
+        binding.rvTodoList.adapter = noteAdapter
 
         setObserver()
 
@@ -64,26 +64,26 @@ class NoteListFrag : Fragment() {
 
             R.id.edit_note -> {
                 noteAdapter = NoteAdapter(true)
-                binding.rvNoteList.adapter = noteAdapter
+                binding.rvTodoList.adapter = noteAdapter
                 noteAdapter.submitList(list)
 
-                binding.lineNoteButtonContainer.isVisible = true
+                binding.constTodoListButtonContainer.isVisible = true
 
                 val constraintSet = ConstraintSet()
-                constraintSet.clear(R.id.line_note_button_container)
-                constraintSet.connect(R.id.line_note_button_container, ConstraintSet.BOTTOM, ConstraintSet.PARENT_ID, ConstraintSet.BOTTOM, 0)
-                constraintSet.connect(R.id.line_note_button_container, ConstraintSet.START, ConstraintSet.PARENT_ID, ConstraintSet.START, 0)
-                constraintSet.connect(R.id.line_note_button_container, ConstraintSet.END, ConstraintSet.PARENT_ID, ConstraintSet.END, 0)
-                constraintSet.constrainWidth(R.id.line_note_button_container, ConstraintSet.MATCH_CONSTRAINT)
-                constraintSet.constrainHeight(R.id.line_note_button_container, ConstraintSet.WRAP_CONTENT)
+                constraintSet.clear(R.id.const_todo_list_button_container)
+                constraintSet.connect(R.id.const_todo_list_button_container, ConstraintSet.BOTTOM, ConstraintSet.PARENT_ID, ConstraintSet.BOTTOM, 0)
+                constraintSet.connect(R.id.const_todo_list_button_container, ConstraintSet.START, ConstraintSet.PARENT_ID, ConstraintSet.START, 0)
+                constraintSet.connect(R.id.const_todo_list_button_container, ConstraintSet.END, ConstraintSet.PARENT_ID, ConstraintSet.END, 0)
+                constraintSet.constrainWidth(R.id.const_todo_list_button_container, ConstraintSet.MATCH_CONSTRAINT)
+                constraintSet.constrainHeight(R.id.const_todo_list_button_container, ConstraintSet.WRAP_CONTENT)
 
-                constraintSet.clear(R.id.rv_note_list)
-                constraintSet.connect(R.id.rv_note_list, ConstraintSet.TOP, ConstraintSet.PARENT_ID, ConstraintSet.TOP, 0)
-                constraintSet.connect(R.id.rv_note_list, ConstraintSet.BOTTOM, R.id.line_note_button_container, ConstraintSet.TOP, 0)
-                constraintSet.connect(R.id.rv_note_list, ConstraintSet.START, ConstraintSet.PARENT_ID, ConstraintSet.START, 0)
-                constraintSet.connect(R.id.rv_note_list, ConstraintSet.END, ConstraintSet.PARENT_ID, ConstraintSet.END, 0)
-                constraintSet.constrainWidth(R.id.rv_note_list, ConstraintSet.MATCH_CONSTRAINT)
-                constraintSet.constrainHeight(R.id.rv_note_list, ConstraintSet.MATCH_CONSTRAINT)
+                constraintSet.clear(R.id.rv_todo_list)
+                constraintSet.connect(R.id.rv_todo_list, ConstraintSet.TOP, ConstraintSet.PARENT_ID, ConstraintSet.TOP, 0)
+                constraintSet.connect(R.id.rv_todo_list, ConstraintSet.BOTTOM, R.id.const_todo_list_button_container, ConstraintSet.TOP, 0)
+                constraintSet.connect(R.id.rv_todo_list, ConstraintSet.START, ConstraintSet.PARENT_ID, ConstraintSet.START, 0)
+                constraintSet.connect(R.id.rv_todo_list, ConstraintSet.END, ConstraintSet.PARENT_ID, ConstraintSet.END, 0)
+                constraintSet.constrainWidth(R.id.rv_todo_list, ConstraintSet.MATCH_CONSTRAINT)
+                constraintSet.constrainHeight(R.id.rv_todo_list, ConstraintSet.MATCH_CONSTRAINT)
                 constraintSet.applyTo(binding.constNoteListParentContainer)
 
                 setAdapter()
@@ -95,38 +95,38 @@ class NoteListFrag : Fragment() {
     }
 
     private fun setOnClickListener(){
-        binding.btnNoteCancel.setOnClickListener {
+        binding.btnTodoListCancel.setOnClickListener {
             noteAdapter = NoteAdapter(false)
-            binding.rvNoteList.adapter = noteAdapter
+            binding.rvTodoList.adapter = noteAdapter
             noteAdapter.submitList(list)
 
             val constraintSet = ConstraintSet()
-            constraintSet.clear(R.id.rv_note_list)
-            constraintSet.connect(R.id.rv_note_list, ConstraintSet.TOP, ConstraintSet.PARENT_ID, ConstraintSet.TOP, 0)
-            constraintSet.connect(R.id.rv_note_list, ConstraintSet.BOTTOM, ConstraintSet.PARENT_ID, ConstraintSet.BOTTOM, 0)
-            constraintSet.connect(R.id.rv_note_list, ConstraintSet.START, ConstraintSet.PARENT_ID, ConstraintSet.START, 0)
-            constraintSet.connect(R.id.rv_note_list, ConstraintSet.END, ConstraintSet.PARENT_ID, ConstraintSet.END, 0)
-            constraintSet.constrainWidth(R.id.rv_note_list, ConstraintSet.MATCH_CONSTRAINT)
-            constraintSet.constrainHeight(R.id.rv_note_list, ConstraintSet.MATCH_CONSTRAINT)
+            constraintSet.clear(R.id.rv_todo_list)
+            constraintSet.connect(R.id.rv_todo_list, ConstraintSet.TOP, ConstraintSet.PARENT_ID, ConstraintSet.TOP, 0)
+            constraintSet.connect(R.id.rv_todo_list, ConstraintSet.BOTTOM, ConstraintSet.PARENT_ID, ConstraintSet.BOTTOM, 0)
+            constraintSet.connect(R.id.rv_todo_list, ConstraintSet.START, ConstraintSet.PARENT_ID, ConstraintSet.START, 0)
+            constraintSet.connect(R.id.rv_todo_list, ConstraintSet.END, ConstraintSet.PARENT_ID, ConstraintSet.END, 0)
+            constraintSet.constrainWidth(R.id.rv_todo_list, ConstraintSet.MATCH_CONSTRAINT)
+            constraintSet.constrainHeight(R.id.rv_todo_list, ConstraintSet.MATCH_CONSTRAINT)
             constraintSet.applyTo(binding.constNoteListParentContainer)
 
-            binding.lineNoteButtonContainer.isVisible = false
+            binding.constTodoListButtonContainer.isVisible = false
 
             setAdapter()
         }
 
-        binding.btnNoteDelete.setOnClickListener {
+        binding.btnTodoListComplete.setOnClickListener {
             for(item in selectList){
                 noteViewModel.delete(item)
             }
-            noteViewModel.getAllNotes(100)
+            noteViewModel.getAllNotes(100, false)
         }
 
         setAdapter()
     }
 
     private fun setObserver(){
-        noteViewModel.getAllNotes(100).observe(viewLifecycleOwner, Observer{
+        noteViewModel.getAllNotes(100, false).observe(viewLifecycleOwner, Observer{
             if(it!=null) {
                 list = it
                 noteAdapter.submitList(list)
@@ -150,7 +150,7 @@ class NoteListFrag : Fragment() {
                     "remove" -> selectList.remove(noteVo)
                 }
                 val deleteText = "${getString(R.string.delete)}(${selectList.size})"
-                binding.btnNoteDelete.text = deleteText
+                binding.btnTodoListComplete.text = deleteText
             }
 
         })
