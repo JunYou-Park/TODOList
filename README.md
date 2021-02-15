@@ -1,5 +1,5 @@
 # TODOList
-2017년도 1학기에 처음 만든 TODO 리스트 앱 프로젝트를 리펙토링한 프로젝트입니다.  
+2017년도 2학기에 처음 만든 TODO 리스트 앱 프로젝트를 리펙토링한 프로젝트입니다.  
 
 ViewBinding, JetPack(RoomDB, AndroidViewModel), joda-time 등을 이용하여 구현하였습니다.  
 
